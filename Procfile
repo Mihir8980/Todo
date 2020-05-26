@@ -1,0 +1,1 @@
+web: gunicorn fun_project.wsgi

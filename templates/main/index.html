@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% csrf_token %}
+        <h3> Add Items </h3>
+        <form action="add_to_do/" method='post'>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="item" name="content" type="text" class="validate">
+          <label for="item">Item please..............</label>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+        </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <ul class="collection with-header">
+        <li class="collection-header"><h4>List of To-Do's</h4></li>
+        {% for todo in list_of_todo %}
+        <li class="collection-item"><div>{{todo.text}} | {{todo.added_date}}
+          <!--<p><label><input href='/'/><span>Important</span></label></p>-->
+        <a href="delete_to_do/{{todo.id}}/" class="secondary-content"><i class="material-icons">cancel</i></a>
+        </div></li>
+        {% endfor %}
+      </ul>
+        </div>
+      </div>
+{% endblock %}
+
