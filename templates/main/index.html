@@ -19,7 +19,7 @@
         <li class="collection-header"><h4>List of To-Do's</h4></li>
         {% for todo in list_of_todo %}
         <li class="collection-item"><div>{{todo.text}} | {{todo.added_date}}
-          <!--<p><label><input href='/'/><span>Important</span></label></p>-->
+        <!--  <p><label><input type="checkbox" name='important'/><span>Important</span></label></p>-->
         <a href="delete_to_do/{{todo.id}}/" class="secondary-content"><i class="material-icons">cancel</i></a>
         </div></li>
         {% endfor %}
